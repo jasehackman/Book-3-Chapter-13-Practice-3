@@ -1,25 +1,38 @@
-let flightHandlerFunction = () => {
-  document.getElementById("flight").classList.remove("disabled")
-  document.getElementById("flight").classList.add("enabled")}
+// let flightHandlerFunction = () => {
+//   document.getElementById("flight").classList.remove("disabled")
+//   document.getElementById("flight").classList.add("enabled")}
 
+// let mindReaderFunction = () => {
+//   let mind = document.getElementById("mindreading");
+//   mind.classList.remove("disabled");
+//   mind.classList.add("enabled");
+// }
 
+// let xrayFunction = () => {
+//   let xray = document.getElementById("xray");
+//   xray.classList.remove("disabled");
+//   xray.classList.add("enabled");
+// }
 
-let mindReaderFunction = () => {
-  let mind = document.getElementById("mindreading");
-  mind.classList.remove("disabled");
-  mind.classList.add("enabled");
-}
+// document.querySelector("#activate-mindreading").addEventListener( 'click', mindReaderFunction)
+// document.querySelector("#activate-xray").addEventListener('click', xrayFunction);
 
-let xrayFunction = () => {
-  let xray = document.getElementById("xray");
-  xray.classList.remove("disabled");
-  xray.classList.add("enabled");
-}
+// document.querySelector("#activate-flight").addEventListener('click', flightHandlerFunction)
 
-document.querySelector("#activate-mindreading").addEventListener( 'click', mindReaderFunction)
-document.querySelector("#activate-xray").addEventListener('click', xrayFunction);
+// ++++++++++++++Challenge
+let allTheButtons = document.querySelectorAll("button");
 
-document.querySelector("#activate-flight").addEventListener('click', flightHandlerFunction)
+allTheButtons.forEach(clc => {
+clc.addEventListener("click", function () {
+  let evta = event.target.id.split("-");
+  let runit = (evta) => {
+    let val = document.getElementById(`${evta[1]}`);
+    val.classList.remove("disabled");
+    val.classList.add("enabled");
+  }
+  runit(evta);
+  })})
+// +++++++++++++++++++++++++++
 
 let art = document.querySelector("article");
 
